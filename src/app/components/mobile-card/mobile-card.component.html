@@ -1,5 +1,20 @@
 <div class="mobile-card card">
-  <div class="card-header">Card header</div>
+  <div class="card-header">
+    <div class="top-icons">
+      <span class="time-now">{{ todayDate | date : "hh:mm" }}</span>
+      <div class="right-icons">
+        <img src="assets/img/group-685.svg" alt="tel" />
+        <img class="mx-2" src="assets/img/wifi-alt.svg" alt="wifi" />
+        <img src="assets/img/battery-full.svg" alt="Battery" />
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="image-contaner">
+        <img src="assets/img/group-3301.svg" alt="group-3301" />
+      </div>
+      <p class="mb-0">communicate</p>
+    </div>
+  </div>
   <div class="card-body">Card body</div>
   <div class="card-footer">Card Footer</div>
 </div>
