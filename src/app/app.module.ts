@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MobileCardComponent } from './components/mobile-card/mobile-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MobileCardComponent
   ],
   imports: [
     BrowserModule,
