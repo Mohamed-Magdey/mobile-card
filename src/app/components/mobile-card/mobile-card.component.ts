@@ -9,6 +9,8 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 export class MobileCardComponent implements OnInit, OnDestroy {
   currentTime: Date = new Date();
 
+  var1 = 'var1';
+
   private intervalId: number | NodeJS.Timeout = 0;
 
   constructor(private cd: ChangeDetectorRef) {}
@@ -24,5 +26,9 @@ export class MobileCardComponent implements OnInit, OnDestroy {
     if(this.intervalId) {
       clearInterval(this.intervalId);
     }
+  }
+
+  handleClick(): void {
+    alert('You did it :)');
   }
 }

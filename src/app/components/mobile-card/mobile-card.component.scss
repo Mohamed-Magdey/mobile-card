@@ -1,10 +1,14 @@
+$b-radius-full: 15px;
+$b-radius-10: 10px;
+$white: #fff;
+
 :host {
   .mobile-card {
-    background-image: url('../../../assets/img/pngwing.com.png');
+    background-image: url("../../../assets/img/pngwing.com.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 576px;
+    min-height: 635px;
     aspect-ratio: 281 / 576;
   }
 
@@ -43,7 +47,7 @@
     .image-contaner {
       width: 32px;
       height: 32px;
-      background-color: #fff;
+      background-color: $white;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -81,8 +85,8 @@
       display: flex;
       align-items: center;
       justify-content: end;
-      background: #fff;
-      border-radius: 15px;
+      background: $white;
+      border-radius: $b-radius-full;
       border: 1px solid #dcdcdc;
       margin: 0 10px 0 0;
       padding: 3px 8px;
@@ -96,16 +100,86 @@
       width: 40%;
       background: black;
       border: 2px solid;
-      border-radius: 15px;
+      border-radius: $b-radius-full;
       align-self: center;
     }
   }
 
   .card-body {
-    background-image: url('../../../assets/img/whats-app.jpg');
+    background-image: url("../../../assets/img/whats-app.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 0 14px;
+    margin: 0 16px;
+    padding-left: 20px;
+    padding-right: 0;
+
+    .day-type {
+      font-weight: bold;
+      font-size: 10px;
+      background: #f9f9ef;
+      width: fit-content;
+      margin: auto;
+      padding: 1px 16px;
+      border-radius: $b-radius-full;
+      box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-content {
+      background-color: $white;
+      width: 82%;
+      margin-top: 16px;
+      box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+      border-radius: $b-radius-10;
+      position: relative;
+
+      p,
+      a,
+      button {
+        font-size: 14px;
+
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .preview-container {
+        padding: 8px;
+
+        img {
+          max-width: 100%;
+          border-radius: $b-radius-full;
+        }
+      }
+
+      hr {
+        border-width: 2px;
+        margin: 4px;
+        opacity: 0.1;
+      }
+
+      a,
+      button {
+        color: #34a6eb;
+        border: none;
+
+        i {
+          font-size: 16px;
+          margin-right: 8px;
+        }
+      }
+
+      &::after {
+        border: solid 10px transparent;
+        border-left: solid 10px #fff;
+        bottom: -3px;
+        content: "";
+        height: 0;
+        left: -8px;
+        position: absolute;
+        transform: rotate(60deg);
+        width: 0;
+      }
+    }
   }
 }
