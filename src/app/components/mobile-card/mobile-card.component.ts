@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mobile-card',
@@ -6,6 +6,23 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./mobile-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MobileCardComponent {
-  todayDate = new Date();
+export class MobileCardComponent implements OnInit, OnDestroy {
+  currentTime: Date = new Date();
+
+  private intervalId: number | NodeJS.Timeout = 0;
+
+  constructor(private cd: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    this.intervalId = setInterval(() => {
+      this.currentTime = new Date();
+      this.cd.markForCheck();
+    }, 1000);
+  }
+
+  ngOnDestroy(): void {
+    if(this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
 }
