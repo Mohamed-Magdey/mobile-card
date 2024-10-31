@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mobile-card:build:production"
+              "buildTarget": "mobile-card:build:production"
             },
             "development": {
-              "browserTarget": "mobile-card:build:development"
+              "buildTarget": "mobile-card:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mobile-card:build"
+            "buildTarget": "mobile-card:build"
           }
         },
         "test": {
