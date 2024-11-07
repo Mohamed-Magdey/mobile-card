@@ -1,6 +1,6 @@
 {
   "name": "mobile-card",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -18,8 +18,8 @@
     "@angular/platform-browser": "^17.3.12",
     "@angular/platform-browser-dynamic": "^17.3.12",
     "@angular/router": "^17.3.12",
-    "bootstrap": "^5.2.0",
-    "@ng-bootstrap/ng-bootstrap": "^15.0.0",
+    "bootstrap": "^5.3.2",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
