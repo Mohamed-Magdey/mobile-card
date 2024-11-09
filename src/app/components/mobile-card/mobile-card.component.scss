@@ -113,6 +113,7 @@ $white: #fff;
     margin: 0 16px;
     padding-left: 20px;
     padding-right: 0;
+    overflow-y: auto;
 
     .day-type {
       font-weight: bold;
@@ -127,7 +128,7 @@ $white: #fff;
 
     .main-content {
       background-color: $white;
-      width: 82%;
+      width: 88%;
       margin-top: 16px;
       box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
       border-radius: $b-radius-10;
@@ -143,11 +144,16 @@ $white: #fff;
         }
       }
 
+      p {
+        width: 200px;
+      }
+
       .preview-container {
         padding: 8px;
 
         img {
           max-width: 100%;
+          width: 100%;
           border-radius: $b-radius-full;
         }
       }
