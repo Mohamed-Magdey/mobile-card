@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, OnDestroy, OnInit, WritableSignal, inject, signal } from '@angular/core';
+import { interval } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-mobile-card',
@@ -6,26 +8,17 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
   styleUrls: ['./mobile-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MobileCardComponent implements OnInit, OnDestroy {
-  currentTime: Date = new Date();
+export class MobileCardComponent {
+  currentTime: WritableSignal<Date> = signal<Date>(new Date());
 
   var1 = 'var1';
 
-  private intervalId: number | NodeJS.Timeout = 0;
-
-  constructor(private cd: ChangeDetectorRef) {}
-
-  ngOnInit(): void {
-    this.intervalId = setInterval(() => {
-      this.currentTime = new Date();
-      this.cd.markForCheck();
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-    if(this.intervalId) {
-      clearInterval(this.intervalId);
-    }
+  constructor() {
+    interval(1000)
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => {
+        this.currentTime.set(new Date());
+      });
   }
 
   handleClick(): void {
