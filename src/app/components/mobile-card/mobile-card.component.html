@@ -17,28 +17,7 @@
   </div>
   <div class="card-body">
     <div class="day-type">Today</div>
-    <div class="main-content">
-      <div class="preview-container">
-        <img src="assets/img/placeholder.png" alt="placeholder">
-      </div>
-      <p class="mx-2 mb-0 pb-3">Hello {{var1}}, <br /> how are you doing</p>
-      <p class="d-flex flex-column mx-2 mb-0 opacity-50">Thank you for your time. <span class="align-self-end mt-2">10:30</span></p>
-      <hr>
-      <a class="btn w-100 text-center" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt"></i>
-        Visit our website
-      </a>
-      <hr>
-      <a class="btn w-100 text-center" href="tel:+1234567890">
-        <i class="fas fa-phone-alt"></i>
-        Call us
-      </a>
-      <hr>
-      <button class="btn w-100 text-center mb-1" (click)="handleClick()">
-        <i class="fas fa-reply"></i>
-        Done
-      </button>
-    </div>
+    <app-story-card *ngFor="let i of [1, 2, 3]" [var1]="'var' +  i" />
   </div>
   <div class="card-footer">
     <div class="top-icons">

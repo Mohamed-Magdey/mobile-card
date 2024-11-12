@@ -11,17 +11,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class MobileCardComponent {
   currentTime: WritableSignal<Date> = signal<Date>(new Date());
 
-  var1 = 'var1';
-
   constructor() {
     interval(1000)
       .pipe(takeUntilDestroyed())
       .subscribe(() => {
         this.currentTime.set(new Date());
       });
-  }
-
-  handleClick(): void {
-    alert('You did it :)');
   }
 }
