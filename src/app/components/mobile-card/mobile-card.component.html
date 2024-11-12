@@ -17,7 +17,9 @@
   </div>
   <div class="card-body">
     <div class="day-type">Today</div>
-    <app-story-card *ngFor="let i of [1, 2, 3]" [var1]="'var' +  i" />
+    @for (i of [1, 2, 3]; track i) {
+      <app-story-card [var1]="'var' +  i" />
+    }
   </div>
   <div class="card-footer">
     <div class="top-icons">
